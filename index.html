@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   
-    <section id="navbar" class="lg:sticky absolute top-0 left-0 right-0 lg:bg-white lg:shadow-lg">
+    <section id="navbar" class="lg:sticky absolute z-10 top-0 left-0 right-0 lg:bg-white lg:shadow-lg">
         <div class="font-second flex justify-between lg:w-[1150px] px-[5%] lg:px-0 m-auto py-6">
             <!-- NAVBAR BRAND -->
             <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -39,8 +47,8 @@
             <img src="./img/FestivoLogo.png" class="block" alt="">
             <p class="text-center lg:text-left text-base lg:text-xl font-semibold mt-14 text-white w-[80%]">Welcome to Festivo Xperience, your trusted immersive media partner in delivering Virtual Reality (VR) and Augmented Reality (AR) solutions that inspire and match your vision.</p>
             <div class="flex gap-4 lg:gap-10 mt-20">
-                <button class="bg-[#EF4123] rounded-full text-white text-xl font-semibold lg:px-14 lg:py-4 py-1 px-6">Our Product</button>
-                <button class="bg-transparent hover:bg-[#EF4123] duration-300 rounded-full border-4 border-[#EF4123] text-white text-xl font-semibold lg:px-14 lg:py-4 py-1 px-6">Our Service</button>
+                <a href="#products" class="bg-[#EF4123] rounded-full text-white text-xl font-semibold lg:px-14 lg:py-4 py-1 px-6">Our Product</a>
+                <a href="#services" class="bg-transparent hover:bg-[#EF4123] duration-300 rounded-full border-4 border-[#EF4123] text-white text-xl font-semibold lg:px-14 lg:py-4 py-1 px-6">Our Service</a>
             </div>
         </div>
     </section>
@@ -68,8 +76,57 @@
                 <div class="text-[65px] lg:leading-[1.1] leading-[.8] text-[#662D91] font-bold">|</div>
                 <p class="font-bold leading-tight"><span class="text-[#EF4123] text-2xl lg:text-[32px]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[40px]">PRODUCTS</span></p>
             </div>
-            <div class="bg-[#662D91] rounded-2xl h-[250px] lg:h-[450px] mt-6">
-                <!-- CAROUSEL PRODUCTS -->
+            <div id="products-carousel" class="bg-[#662D91] rounded-2xl lg:w-[1150px] overflow-hidden lg:py-20 h-[250px] lg:h-[450px] mt-6">
+                <!-- Slider main container -->
+                <div class="hidden lg:block swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div style="background-image: url('./img/Parallel.png');" class="bg-cover swiper-slide rounded-2xl p-4 relative">
+                            <div class="flex items-center gap-4">
+                                <img src="./img/ParalellXLogo.png" alt="">
+                                <div class="">
+                                    <p class="text-white text-2xl">PARALLEL X</p>
+                                    <p class="bg-black/30 text-white p-3 rounded-lg text-sm mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quas commodi aliquam placeat, quos natus nemo</p>
+                                </div>
+                            </div>
+                            <button class="absolute bottom-[1rem] right-[1rem] px-10 py-2 rounded-full text-sm font-bold text-white bg-[#ef4223]">Visit Website</button>
+                        </div>
+                        <div style="background-image: url('./img/Pesawat.png');" class="bg-cover swiper-slide rounded-2xl p-4 relative">
+                            <div class="flex items-center gap-4">
+                                <img src="./img/ParalellXLogo.png" alt="">
+                                <div class="">
+                                    <p class="text-white text-2xl">POLRI</p>
+                                    <p class="bg-black/30 text-white p-3 rounded-lg text-sm mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quas commodi aliquam placeat, quos natus nemo</p>
+                                </div>
+                            </div>
+                            <button class="absolute bottom-[1rem] right-[1rem] px-10 py-2 rounded-full text-sm font-bold text-white bg-[#ef4223]">Visit Website</button>
+                        </div>
+                        <div style="background-image: url('./img/Sapi.png');" class="bg-cover swiper-slide rounded-2xl p-4 relative">
+                            <div class="flex items-center gap-4">
+                                <img src="./img/ParalellXLogo.png" alt="">
+                                <div class="">
+                                    <p class="text-white text-2xl">Muslim Maya</p>
+                                    <p class="bg-black/30 text-white p-3 rounded-lg text-sm mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quas commodi aliquam placeat, quos natus nemo</p>
+                                </div>
+                            </div>
+                            <button class="absolute bottom-[1rem] right-[1rem] px-10 py-2 rounded-full text-sm font-bold text-white bg-[#ef4223]">Visit Website</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="carousel-mobile" class="h-[250px] relative lg:hidden">
+                    <div class="flex">
+                        <img id="slide-1" class="object-cover min-h-[250px] w-full" src="./img/Parallel.png" alt="">
+                        <img id="slide-2" class="object-cover min-h-[250px] w-full" src="./img/Parallel.png" alt="">
+                        <img id="slide-3" class="object-cover min-h-[250px] w-full" src="./img/Parallel.png" alt="">
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#slide-1">•</a>
+                        <a href="#slide-2">•</a>
+                        <a href="#slide-3">•</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -151,12 +208,42 @@
             </div>
 
             <!-- CASE STUDIES -->
-            <div class="flex gap-10 bg-[#EF4123]/10">
-                <div class="lg:w-[1150px] px-[5%] lg:px-0 lg:m-auto py-10 lg:py-20 lg:pb-24">
+            <div class="bg-[#662D91]/10 py-10">
+                <div id="studies-carousel" class="lg:w-[1150px] px-[5%] lg:px-0 lg:m-auto lg:mb-6 overflow-x-auto flex gap-10">
+                    
                     <div class="w-[300px]">
-                        <img src="./img/CaseStudies.jpg" alt="">
+                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies.jpg" alt="">
                         <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
                     </div>
+                    <div class="w-[300px]">
+                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies2.jpg" alt="">
+                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
+                    </div>
+                    <div class="w-[300px]">
+                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies3.jpg" alt="">
+                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
+                    </div>
+                    <div class="w-[300px]">
+                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies4.jpg" alt="">
+                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
+                    </div>
+                    <div class="w-[300px]">
+                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies5.jpg" alt="">
+                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
+                    </div>
+                    <div class="w-[300px]">
+                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies6.jpg" alt="">
+                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-between px-[5%] lg:px-0 mt-10 lg:mt-0 lg:w-[1150px] m-auto">
+                    <button id="prev-slide" class="slide-button material-symbols-outlined bg-[#662D91] text-white py-2 px-5 text-sm rounded-full flex items-center text-center text-sm">
+                        arrow_back_ios
+                    </button>
+                    <button id="next-slide" class="slide-button material-symbols-outlined bg-[#662D91] text-white py-2 px-5 text-sm rounded-full flex items-center text-center text-sm">
+                        arrow_forward_ios
+                    </button>
                 </div>
             </div>
         </div>
@@ -167,7 +254,7 @@
         <div class="pb-20 pt-10 lg:w-[1150px] px-[5%] lg:px-0 m-auto">
             <p class="text-center font-bold text-2xl lg:text-[32px] leading-tight"><span class="text-[#EF4123]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[36px]">CONTACT</span></p>
             <div class="grid lg:grid-cols-2 gap-10 mt-10">
-                <img class="lg:hidden" src="./img/FestivoForm.png" alt="">
+                <img class="lg:hidden m-auto" src="./img/FestivoForm.png" alt="">
                 <svg class="hidden lg:block" width="600" height="600" viewBox="0 0 630 774" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g filter="url(#filter0_f_0_1)">
                     <ellipse cx="315" cy="647.5" rx="215" ry="26.5" fill="#0E0E0E"/>
@@ -200,21 +287,17 @@
                 <div class="">
                     <p class="text-[#EF4123] text-[32px] font-bold">Say hi, </p>
                     <p>and drop your vision here :</p>
-                    <form action="">
+                    <form id="form-contact">
                         <div class="mt-6">
-                            <p>Your Name</p>
-                            <input type="text" class="w-full rounded-lg border py-1.5 border-[#662D91] mt-3 px-4" name="username" id="">
+                            <p>Subject</p>
+                            <input required type="text" class="w-full rounded-lg border py-1.5 border-[#662D91] mt-3 px-4" name="subject" id="">
                         </div>
                         <div class="mt-6">
-                            <p>Your Email</p>
-                            <input type="text" class="w-full rounded-lg border py-1.5 border-[#662D91] mt-3 px-4" name="username" id="">
-                        </div>
-                        <div class="mt-6">
-                            <p>Add Description</p>
-                            <textarea name="description" id="" rows="4" class="w-full rounded-lg border border-[#662D91] py-4 px-4"></textarea>
+                            <p>Add Message</p>
+                            <textarea required name="message" id="" rows="4" class="w-full mt-3 rounded-lg border border-[#662D91] py-4 px-4"></textarea>
                         </div>
 
-                        <button class="text-center text-white w-full rounded-lg bg-[#662D91] py-3 lg:py-2.5 mt-5">SEND</button>
+                        <button id="send-contact" type="submit" class="text-center text-white w-full rounded-lg bg-[#662D91] py-3 lg:py-2.5 mt-5">SEND</button>
                     </form>
                 </div>
             </div>
@@ -235,33 +318,64 @@
                         <p class="mt-6">hello@festivo.co</p>
                     </div>
                     <div class="flex flex-row mt-14 lg:mt-0 lg:flex-col gap-4">
-                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="21" cy="21" r="21" fill="white"/>
-                        </svg>
-                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="21" cy="21" r="21" fill="white"/>
-                        </svg>
-                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="21" cy="21" r="21" fill="white"/>
-                        </svg>
-                            
+                        <a href="">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="21" cy="21" r="21" fill="white"/>
+                                <path d="M16.8 11H25.2C28.4 11 31 13.6 31 16.8V25.2C31 26.7383 30.3889 28.2135 29.3012 29.3012C28.2135 30.3889 26.7383 31 25.2 31H16.8C13.6 31 11 28.4 11 25.2V16.8C11 15.2617 11.6111 13.7865 12.6988 12.6988C13.7865 11.6111 15.2617 11 16.8 11ZM16.6 13C15.6452 13 14.7295 13.3793 14.0544 14.0544C13.3793 14.7295 13 15.6452 13 16.6V25.4C13 27.39 14.61 29 16.6 29H25.4C26.3548 29 27.2705 28.6207 27.9456 27.9456C28.6207 27.2705 29 26.3548 29 25.4V16.6C29 14.61 27.39 13 25.4 13H16.6ZM26.25 14.5C26.5815 14.5 26.8995 14.6317 27.1339 14.8661C27.3683 15.1005 27.5 15.4185 27.5 15.75C27.5 16.0815 27.3683 16.3995 27.1339 16.6339C26.8995 16.8683 26.5815 17 26.25 17C25.9185 17 25.6005 16.8683 25.3661 16.6339C25.1317 16.3995 25 16.0815 25 15.75C25 15.4185 25.1317 15.1005 25.3661 14.8661C25.6005 14.6317 25.9185 14.5 26.25 14.5ZM21 16C22.3261 16 23.5979 16.5268 24.5355 17.4645C25.4732 18.4021 26 19.6739 26 21C26 22.3261 25.4732 23.5979 24.5355 24.5355C23.5979 25.4732 22.3261 26 21 26C19.6739 26 18.4021 25.4732 17.4645 24.5355C16.5268 23.5979 16 22.3261 16 21C16 19.6739 16.5268 18.4021 17.4645 17.4645C18.4021 16.5268 19.6739 16 21 16ZM21 18C20.2044 18 19.4413 18.3161 18.8787 18.8787C18.3161 19.4413 18 20.2044 18 21C18 21.7956 18.3161 22.5587 18.8787 23.1213C19.4413 23.6839 20.2044 24 21 24C21.7956 24 22.5587 23.6839 23.1213 23.1213C23.6839 22.5587 24 21.7956 24 21C24 20.2044 23.6839 19.4413 23.1213 18.8787C22.5587 18.3161 21.7956 18 21 18Z" fill="black"/>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="21" cy="21" r="21" fill="white"/>
+                                <g clip-path="url(#clip0_2015_3)">
+                                <path d="M24.003 14C24.262 14 24.587 14.068 24.848 14.132C25.758 14.352 26.837 14.625 27.603 15.2C28.316 15.735 28.87 16.668 29.298 17.616C30.188 19.591 30.807 22.224 31.021 24.226C31.123 25.176 31.148 26.132 30.965 26.775C30.875 27.091 30.68 27.329 30.543 27.475C30.125 27.918 29.587 28.249 29.055 28.55L28.791 28.699C28.6171 28.7957 28.4421 28.8904 28.266 28.983L27.744 29.253L27.027 29.61L26.45 29.894C26.2389 29.9998 25.9971 30.0274 25.7675 29.972C25.538 29.9166 25.3354 29.7817 25.1958 29.5913C25.0561 29.4008 24.9883 29.1671 25.0045 28.9315C25.0207 28.6959 25.1197 28.4736 25.284 28.304L24.85 27.436C23.6021 27.8152 22.3043 28.0054 21 28C19.63 28 18.323 27.8 17.15 27.436L16.717 28.302C16.882 28.4713 16.9816 28.6936 16.9983 28.9294C17.0149 29.1652 16.9475 29.3992 16.808 29.5901C16.6685 29.7809 16.4659 29.9161 16.2361 29.9717C16.0064 30.0274 15.7644 29.9998 15.553 29.894L15.009 29.624C14.405 29.326 13.801 29.028 13.213 28.699C12.599 28.356 11.948 27.991 11.461 27.474C11.2667 27.2776 11.122 27.0376 11.039 26.774C10.855 26.132 10.881 25.177 10.982 24.226C11.196 22.224 11.815 19.591 12.706 17.616C13.133 16.668 13.687 15.735 14.4 15.2C15.166 14.625 16.245 14.352 17.155 14.132C17.416 14.068 17.74 14 18 14C18.1438 13.9999 18.286 14.0308 18.4168 14.0906C18.5476 14.1504 18.6639 14.2377 18.7579 14.3466C18.8519 14.4555 18.9212 14.5833 18.9613 14.7215C19.0014 14.8596 19.0112 15.0047 18.99 15.147C19.6555 15.0485 20.3273 14.9994 21 15C21.691 15 22.366 15.05 23.014 15.148C22.9927 15.0057 23.0024 14.8604 23.0424 14.7222C23.0824 14.5839 23.1517 14.4559 23.2457 14.3469C23.3397 14.2379 23.4561 14.1505 23.587 14.0906C23.7178 14.0308 23.8591 13.9999 24.003 14ZM25.357 16.363C25.207 16.315 25.171 16.336 25.117 16.426L25.055 16.538C24.8934 16.8151 24.648 17.0337 24.3542 17.1623C24.0603 17.291 23.7332 17.3231 23.42 17.254C22.6247 17.0833 21.8134 16.9981 21 17C20.148 17 19.333 17.09 18.58 17.254C18.2668 17.3231 17.9397 17.291 17.6459 17.1623C17.3521 17.0337 17.1066 16.8151 16.945 16.538L16.883 16.427C16.83 16.337 16.794 16.316 16.645 16.363C16.289 16.476 15.907 16.597 15.6 16.8C15.313 17.015 14.93 17.55 14.529 18.439C13.763 20.136 13.163 22.643 12.971 24.439C12.931 24.818 12.91 25.143 12.905 25.411V25.705C12.909 25.883 12.922 26.024 12.94 26.127C13.194 26.375 13.508 26.57 13.823 26.749L14.505 27.126L14.951 27.361L15.315 26.633C15.1388 26.4688 15.0277 26.2465 15.0023 26.007C14.9769 25.7674 15.0388 25.5268 15.1766 25.3292C15.3144 25.1317 15.5189 24.9905 15.7525 24.9317C15.9861 24.8728 16.2331 24.9003 16.448 25.009C17.664 25.62 19.246 26 21 26C22.753 26 24.336 25.618 25.552 25.01C25.7578 24.9069 25.9928 24.878 26.2175 24.928C26.4421 24.9781 26.6426 25.1041 26.7851 25.2848C26.9276 25.4655 27.0035 25.6899 26.9998 25.92C26.9961 26.1501 26.9132 26.3719 26.765 26.548L26.685 26.633L27.049 27.363C27.347 27.209 27.646 27.046 27.946 26.88C28.336 26.664 28.746 26.437 29.063 26.127C29.081 26.024 29.093 25.883 29.098 25.705V25.411C29.0899 25.0859 29.0679 24.7612 29.032 24.438C28.84 22.643 28.24 20.136 27.474 18.438C27.074 17.55 26.69 17.015 26.404 16.8C26.096 16.597 25.714 16.476 25.357 16.363ZM17.75 20.5C18.2141 20.5 18.6593 20.6844 18.9875 21.0126C19.3156 21.3408 19.5 21.7859 19.5 22.25C19.5 22.7141 19.3156 23.1592 18.9875 23.4874C18.6593 23.8156 18.2141 24 17.75 24C17.2859 24 16.8408 23.8156 16.5126 23.4874C16.1844 23.1592 16 22.7141 16 22.25C16 21.7859 16.1844 21.3408 16.5126 21.0126C16.8408 20.6844 17.2859 20.5 17.75 20.5ZM24.25 20.5C24.7141 20.5 25.1593 20.6844 25.4875 21.0126C25.8156 21.3408 26 21.7859 26 22.25C26 22.7141 25.8156 23.1592 25.4875 23.4874C25.1593 23.8156 24.7141 24 24.25 24C23.7859 24 23.3408 23.8156 23.0126 23.4874C22.6844 23.1592 22.5 22.7141 22.5 22.25C22.5 21.7859 22.6844 21.3408 23.0126 21.0126C23.3408 20.6844 23.7859 20.5 24.25 20.5Z" fill="black"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2015_3">
+                                <rect width="24" height="24" fill="white" transform="translate(9 10)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="21" cy="21" r="21" fill="white"/>
+                                <path d="M22.941 19.392L30.5355 10.5H28.7355L22.143 18.2205L16.875 10.5H10.8L18.765 22.176L10.8 31.5H12.6L19.563 23.346L25.1265 31.5H31.2015L22.941 19.392ZM20.4765 22.278L19.6695 21.1155L13.248 11.865H16.0125L21.1935 19.3305L22.0005 20.493L28.737 30.198H25.9725L20.4765 22.278Z" fill="black"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="text-[#898989] grid grid-cols-3 pt-4">
                 <div class="justify-self-start w-max">
-                    <a clsas="">festivo</a>
+                    <p>festivo</p>
                 </div>
-                <div class="justify-self-center w-max">
-                    <a clsas="">Privacy Policy</a>
-                </div>
+                <a href="https://www.termsfeed.com/live/39a6e853-6e3e-423b-b831-615512fa44c5" class="justify-self-center w-max">
+                    <p clsas="">Privacy Policy</p>
+                </a>
                 <div class="justify-self-end">
-                    <a clsas="justify-items-end justify-self-center w-max">© 2024 PT Semesta Realitas Indonesia</a>
+                    <p clsas="justify-items-end justify-self-center w-max">© 2024 PT Semesta Realitas Indonesia</p>
                 </div>
             </div>
         </div>
     </footer>
 
 </body>
+<script src="./script.js"></script>
+<script>
+    $(".slide-button").click(function(){
+        const direction = this.id == "prev-slide" ? -1 : 1
+        const scrollAmount = $("#studies-carousel").width() * direction 
+        $("#studies-carousel").animate({ scrollLeft: `+=${scrollAmount}px` }, "slow");
+    })
+
+    $("#form-contact").submit(function(e){
+        e.preventDefault()
+        let subject = $("input[name=subject]").val()
+        let message = $("textarea[name=message]").val()
+
+        window.location = `mailto:hello@festivo.co?subject=${subject}&body=${message}`
+    })
+</script>
 </html>
