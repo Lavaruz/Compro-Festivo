@@ -4,6 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+            animation: {
+                'infinite-scroll': 'infinite-scroll 60s linear infinite',
+            },
+            keyframes: {
+                'infinite-scroll': {
+                    from: { transform: 'translateX(0)' },
+                    to: { transform: 'translateX(-100%)' },
+                }
+            },
+            colors: {
+                clifford: '#da373d',
+            }
+        }
+      }
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link
@@ -30,11 +50,11 @@
             </svg>
 
             <!-- NAVBAR LIST -->
-            <div class="hidden lg:flex gap-6 items-center font-semibold">
+            <div class="hidden lg:flex gap-14 items-center font-semibold">
                 <a href="#hero">Home</a>
                 <a href="#products">Product</a>
                 <a href="#services">Service</a>
-                <a href="#studies">Case Studied</a>
+                <!-- <a href="#studies">Case Studied</a> -->
                 <a href="#profile">Profile</a>
                 <a href="#contact">Contact Us</a>
             </div>
@@ -42,7 +62,7 @@
     </section>
 
     <!-- HERO SECTION -->
-    <section class="bg-center bg-cover lg:min-h-[90vh] min-h-[100vh] flex" id="hero">
+    <section class="anchor bg-center bg-cover lg:min-h-[92vh] min-h-[100vh] flex" id="hero">
         <div class="lg:w-[1150px] m-auto flex flex-col items-center lg:items-start">
             <img src="./img/FestivoLogo.png" class="block" alt="">
             <p class="text-center lg:text-left text-base lg:text-xl font-semibold mt-14 text-white w-[80%]">Welcome to Festivo Xperience, your trusted immersive media partner in delivering Virtual Reality (VR) and Augmented Reality (AR) solutions that inspire and match your vision.</p>
@@ -54,27 +74,11 @@
     </section>
 
 
-    <section id="client">
-        <div class="py-20">
-            <div class="bg-[#662D91]/10 pb-16 pt-3">
-                <p class="text-center font-bold text-2xl lg:text-[32px] leading-tight"><span class="text-[#EF4123]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[36px]">PARTNERS AND CLIENTS</span></p>
-                <div class="mt-10 flex gap-10 pt-3 items-center justify-center">
-                    <img src="./img/Kin.png" class="block" alt="">
-                    <img src="./img/Kin.png" class="block" alt="">
-                    <img src="./img/Kin.png" class="lg:block hidden" alt="">
-                    <img src="./img/Kin.png" class="lg:block hidden" alt="">
-                    <img src="./img/Kin.png" class="lg:block hidden" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="products">
+    <section id="products" class="anchor">
         <div class="lg:w-[1150px] px-[5%] lg:px-0 m-auto pt-10 pb-20">
             <div class="flex gap-3">
-                <div class="text-[65px] lg:leading-[1.1] leading-[.8] text-[#662D91] font-bold">|</div>
-                <p class="font-bold leading-tight"><span class="text-[#EF4123] text-2xl lg:text-[32px]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[40px]">PRODUCTS</span></p>
+                <div class="text-[65px] lg:leading-[1.1] leading-[.75] leading text-[#662D91] font-bold">|</div>
+                <p class="font-bold leading-tight"><span class="text-[#EF4123] text-[24px] lg:text-[32px]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[40px]">PRODUCTS</span></p>
             </div>
             <div id="products-carousel" class="bg-[#662D91] rounded-2xl lg:w-[1150px] overflow-hidden lg:py-20 h-[250px] lg:h-[450px] mt-6">
                 <!-- Slider main container -->
@@ -132,7 +136,7 @@
     </section>
 
 
-    <section id="services">
+    <section id="services" class="anchor">
         <div class="lg:w-[1150px] px-[5%] lg:px-0 m-auto pt-10 pb-20">
             <div class="flex gap-3">
                 <div class="text-[65px] lg:leading-[1.1] leading-[.75] leading text-[#662D91] font-bold">|</div>
@@ -182,11 +186,80 @@
     </section>
 
 
-    <section id="profile" class="pb-20 pt-10">
+
+    <section id="client" class="anchor">
+        <div class="py-20">
+            <div class="bg-[#662D91]/10 pb-16 pt-3">
+                <p class="text-center font-bold text-2xl lg:text-[32px] leading-tight"><span class="text-[#EF4123]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[36px]">PARTNERS AND CLIENTS</span></p>
+                <div class="py-14 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+                    <ul id="brand-slider" class="flex items-center justify-center md:justify-start [&_li]:mx-10 [&_img]:max-w-none animate-infinite-scroll">
+                        <li><img src="./img/Client/AMD.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/ASEANF.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BINUS.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BLUESCOP.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BNPB.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BUDIPRADONO.webp" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/FAO.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/G20.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/GG.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/HOTSTAR.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/INVRA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/ITB.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KAMPUS-MERDEKA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KEMENPERIN.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KIN.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KVRA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/LOGO-POLTEKKES-MATARAM.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/MUSEUM NASIONAL.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/MUSEUM-MACAN.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/POLRI.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/REKA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/SALIHARA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/SMK-HEBAT.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/TELKOM.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/UKI_LOGO.svg.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/YDBA.png" width="110px" class="block" alt=""></li>
+                    </ul>
+                    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-10 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+                        <li><img src="./img/Client/AMD.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/ASEANF.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BINUS.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BLUESCOP.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BNPB.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/BUDIPRADONO.webp" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/FAO.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/G20.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/GG.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/HOTSTAR.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/INVRA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/ITB.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KAMPUS-MERDEKA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KEMENPERIN.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KIN.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/KVRA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/LOGO-POLTEKKES-MATARAM.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/MUSEUM NASIONAL.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/MUSEUM-MACAN.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/POLRI.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/REKA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/SALIHARA.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/SMK-HEBAT.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/TELKOM.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/UKI_LOGO.svg.png" width="110px" class="block" alt=""></li>
+                        <li><img src="./img/Client/YDBA.png" width="110px" class="block" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="profile" class="anchor pb-20 pt-10">
         <div class="lg:w-[1150px] px-[5%] lg:px-0 m-auto">
             <div class="flex gap-3">
-                <div class="text-[65px] lg:leading-[1.1] leading-[.8] text-white font-bold">|</div>
-                <p class="font-bold leading-tight"><span class="text-[#EF4123] text-2xl lg:text-[32px]">OUR</span> <br> <span class="text-white text-[32px] lg:text-[40px]">PROFILE</span></p>
+                <div class="text-[65px] lg:leading-[1.1] leading-[.75] leading text-white font-bold">|</div>
+                <p class="font-bold leading-tight"><span class="text-[#EF4123] text-[24px] lg:text-[32px]">OUR</span> <br> <span class="text-white text-[32px] lg:text-[40px]">PROFILE</span></p>
             </div>
     
             <div class="grid lg:grid-cols-2 gap-16 mt-14 justify-center items-center">
@@ -200,58 +273,9 @@
         </div>
     </section>
 
-    <section id="studies">
-        <div class="pt-10 pb-20">
-            <div class="lg:w-[1150px] px-[5%] lg:px-0 m-auto mb-7 flex gap-3">
-                <div class="text-[65px] lg:leading-[1.1] leading-[.8] text-[#662D91] font-bold">|</div>
-                <p class="font-bold leading-tight"><span class="text-[#EF4123] text-2xl lg:text-[32px]">CASE</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[40px]">STUDIES</span></p>
-            </div>
 
-            <!-- CASE STUDIES -->
-            <div class="bg-[#662D91]/10 py-10">
-                <div id="studies-carousel" class="lg:w-[1150px] px-[5%] lg:px-0 lg:m-auto lg:mb-6 overflow-x-auto flex gap-10">
-                    
-                    <div class="w-[300px]">
-                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies.jpg" alt="">
-                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
-                    </div>
-                    <div class="w-[300px]">
-                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies2.jpg" alt="">
-                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
-                    </div>
-                    <div class="w-[300px]">
-                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies3.jpg" alt="">
-                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
-                    </div>
-                    <div class="w-[300px]">
-                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies4.jpg" alt="">
-                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
-                    </div>
-                    <div class="w-[300px]">
-                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies5.jpg" alt="">
-                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
-                    </div>
-                    <div class="w-[300px]">
-                        <img class="min-w-[300px] h-[300px] object-cover" src="./img/CaseStudies6.jpg" alt="">
-                        <p class="mt-3 font-bold text-[#662D91]">Lorem ipsum dolor sit, amet consectetur</p>
-                    </div>
-                </div>
-
-                <div class="flex justify-between px-[5%] lg:px-0 mt-10 lg:mt-0 lg:w-[1150px] m-auto">
-                    <button id="prev-slide" class="slide-button material-symbols-outlined bg-[#662D91] text-white py-2 px-5 text-sm rounded-full flex items-center text-center text-sm">
-                        arrow_back_ios
-                    </button>
-                    <button id="next-slide" class="slide-button material-symbols-outlined bg-[#662D91] text-white py-2 px-5 text-sm rounded-full flex items-center text-center text-sm">
-                        arrow_forward_ios
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="contact">
-        <div class="pb-20 pt-10 lg:w-[1150px] px-[5%] lg:px-0 m-auto">
+    <section id="contact" class="anchor">
+        <div class="pt-20 lg:w-[1150px] px-[5%] lg:px-0 m-auto">
             <p class="text-center font-bold text-2xl lg:text-[32px] leading-tight"><span class="text-[#EF4123]">OUR</span> <br> <span class="text-[#662D91] text-[32px] lg:text-[36px]">CONTACT</span></p>
             <div class="grid lg:grid-cols-2 gap-10 mt-10">
                 <img class="lg:hidden m-auto" src="./img/FestivoForm.png" alt="">
@@ -304,7 +328,7 @@
         </div>
     </section>
 
-    <footer id="footer" class="bg-[#313131] py-12 pb-4">
+    <footer id="footer" class="anchor bg-[#313131] py-12 pb-4">
         <div class="lg:w-[1150px] px-[5%] lg:px-0 m-auto bg-[#313131] text-white">
             <div class="grid lg:grid-cols-2 gap-6 lg:gap-16 pb-16">
                 <div class="">
@@ -364,12 +388,6 @@
 </body>
 <script src="./script.js"></script>
 <script>
-    $(".slide-button").click(function(){
-        const direction = this.id == "prev-slide" ? -1 : 1
-        const scrollAmount = $("#studies-carousel").width() * direction 
-        $("#studies-carousel").animate({ scrollLeft: `+=${scrollAmount}px` }, "slow");
-    })
-
     $("#form-contact").submit(function(e){
         e.preventDefault()
         let subject = $("input[name=subject]").val()
