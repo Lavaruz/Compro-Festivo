@@ -1,33 +1,27 @@
-$(".slide-button").click(function(){
-    const direction = this.id == "prev-slide" ? -1 : 1
-    const scrollAmount = $("#studies-carousel").width() * direction
-})
+$("#form-contact").submit(function (e) {
+  e.preventDefault();
+  let subject = $("input[name=subject]").val();
+  let message = $("textarea[name=message]").val();
 
-var mySwiper = new Swiper ('.swiper-container', {
-    speed: 400,
-    spaceBetween: 100,
-    initialSlide: 2,
-    //truewrapper adoptsheight of active slide
-    autoHeight: false,
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    // delay between transitions in ms
-    autoplay: 5000,
-    autoplayStopOnLast: false, // loop false also
-    
-    // And if we need scrollbar
-    //scrollbar: '.swiper-scrollbar',
-    // "slide", "fade", "cube", "coverflow" or "flip"
-    effect: 'slide',
-    // Distance between slides in px.
-    spaceBetween: 60,
-    //
-    slidesPerView: 2,
-    //
-    centeredSlides: true,
-    //
-    slidesOffsetBefore: 0,
-    //
-    grabCursor: true,
-})  
+  window.location = `mailto:hello@festivo.co?subject=${subject}&body=${message}`;
+});
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 2,
+  spaceBetween: 30,
+  loop: true,
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+var swiper = new Swiper(".mySwiperMobile", {
+  loop: true,
+  spaceBetween: 15,
+});
