@@ -1,11 +1,3 @@
-$("#form-contact").submit(function (e) {
-  e.preventDefault();
-  let subject = $("input[name=subject]").val();
-  let message = $("textarea[name=message]").val();
-
-  window.location = `mailto:hello@festivo.co?subject=${subject}&body=${message}`;
-});
-
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
   spaceBetween: 30,
@@ -25,3 +17,25 @@ var swiper = new Swiper(".mySwiperMobile", {
   loop: true,
   spaceBetween: 15,
 });
+
+$("#form-contact").submit(function(e){
+  e.preventDefault()
+  var form = $(this);
+
+  $(this).find("#send-contact").text("SENDING...").prop("disabled", true)
+    
+  $.ajax({
+      type: "POST",
+      url: "https://api.festivo.co/festivo/v1/send-email",
+      data: form.serialize(), // serializes the form's elements.
+      success: function(response, status){
+        if(status == "success"){
+          $("#popup-email-success").removeClass("invisible")
+            setTimeout(function() {
+              $("#popup-email-success").addClass("invisible");
+              $("#send-contact").text("SENT")
+            }, 2500);
+        }
+      }
+  });
+})

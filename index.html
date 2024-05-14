@@ -943,6 +943,16 @@
                         <p>and drop your vision here :</p>
                         <form id="form-contact">
                             <div class="mt-6">
+                                <p>Email</p>
+                                <input
+                                    required
+                                    type="email"
+                                    class="w-full rounded-lg border py-1.5 border-[#662D91] mt-3 px-4"
+                                    name="email"
+                                    id=""
+                                />
+                            </div>
+                            <div class="mt-6">
                                 <p>Subject</p>
                                 <input
                                     required
@@ -966,7 +976,7 @@
                             <button
                                 id="send-contact"
                                 type="submit"
-                                class="text-center text-white w-full rounded-lg bg-[#662D91] py-3 lg:py-2.5 mt-5"
+                                class="text-center text-white w-full rounded-lg bg-[#662D91] py-3 lg:py-2.5 mt-5 disabled:bg-[#662D91]/50"
                             >
                                 SEND
                             </button>
@@ -1107,6 +1117,11 @@
                 </div>
             </div>
         </footer>
+
+        <div id="popup-email-success" class="invisible bg-[#5cb85c] border border-green-500 fixed top-[6rem] z-30 left-1/2 transform -translate-x-1/2 text-white px-16 py-1.5 rounded-lg">
+            Email anda berhasil di kirim
+        </div>
+
     </body>
     <script src="./script.js"></script>
 </html>
